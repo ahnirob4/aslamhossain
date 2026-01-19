@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aslam Hossain | AI/ML Developer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    <canvas id="neuralCanvas"></canvas>
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">🐍</div>
+            Aslam Hossain
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">হোম</a></li>
+            <li><a href="#projects">প্রজেক্ট</a></li>
+            <li><a href="#skills">স্কিল</a></li>
+            <li><a href="#experience">অভিজ্ঞতা</a></li>
+            <li><a href="#contact">যোগাযোগ</a></li>
+        </ul>
+        <button class="nav-btn" onclick="openModal()">আমাকে হায়ার করুন</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                AI/ML এ কাজ করছি
+            </div>
+            <h1>হাই, আমি <span class="name">Aslam Hossain</span><br><span class="highlight">AI/ML Developer</span></h1>
+            <div class="typing-text">
+                <span id="typing"></span><span class="cursor">|</span>
+            </div>
+            <p>Python, Machine Learning, Deep Learning এবং Data Science এ বিশেষজ্ঞ। জটিল সমস্যা সমাধানে AI এর শক্তি ব্যবহার করি।</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
+                    🚀 আমার কাজ দেখুন
+                </button>
+                <button class="btn-secondary" onclick="window.open('https://github.com', '_blank')">
+                    ⚡ GitHub প্রোফাইল
+                </button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-card">
+                <div class="hero-card-header">
+                    <div class="hero-card-avatar">👨‍💻</div>
+                    <div class="hero-card-info">
+                        <h3>Aslam Hossain</h3>
+                        <p>AI/ML Engineer</p>
+                    </div>
+                </div>
+                <div class="hero-card-stats">
+                    <div class="stat-item">
+                        <div class="number" id="stat1">0</div>
+                        <div class="label">ML মডেল</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number" id="stat2">0</div>
+                        <div class="label">প্রজেক্ট</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number" id="stat3">0</div>
+                        <div class="label">বছর</div>
+                    </div>
+                </div>
+                <div class="skill-bars">
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>🐍 Python</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill python" style="width: 0%" data-width="95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>🤖 Machine Learning</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill ml" style="width: 0%" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-header">
+                            <span>🧠 Deep Learning</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill dl" style="width: 0%" data-width="85%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tech-stack">
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">PyTorch</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">NumPy</span>
+                    <span class="tech-tag">Keras</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stat-card">
+            <div class="stat-card-icon">🤖</div>
+            <div class="number" id="counter1">0</div>
+            <div class="label">ML Models Deployed</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-card-icon">📊</div>
+            <div class="number" id="counter2">0</div>
+            <div class="label">Data Projects</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-card-icon">⭐</div>
+            <div class="number" id="counter3">0</div>
+            <div class="label">GitHub Stars</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-card-icon">📝</div>
+            <div class="number" id="counter4">0</div>
+            <div class="label">Research Papers</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="section-header">
+            <h2>আমার <span>AI/ML প্রজেক্ট</span></h2>
+            <p>Machine Learning এবং Deep Learning দিয়ে তৈরি বাস্তব সমস্যা সমাধানের প্রজেক্টসমূহ</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image nn">
+                    🧠
+                    <span class="project-badge"><span class="badge-dot"></span> Deep Learning</span>
+                </div>
+                <div class="project-content">
+                    <h3>Neural Network Image Classifier</h3>
+                    <p>CNN ব্যবহার করে ইমেজ ক্লাসিফিকেশন মডেল যা ৯৮% একুরেসি অর্জন করেছে</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>CNN</span>
+                        <span>Keras</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com" target="_blank" class="project-link">📂 GitHub</a>
+                        <a href="#" class="project-link">🔗 Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image cv">
+                    👁️
+                    <span class="project-badge"><span class="badge-dot"></span> Computer Vision</span>
+                </div>
+                <div class="project-content">
+                    <h3>Real-time Object Detection</h3>
+                    <p>YOLO এবং OpenCV দিয়ে রিয়েল-টাইম অবজেক্ট ডিটেকশন সিস্টেম</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>YOLO</span>
+                        <span>OpenCV</span>
+                        <span>PyTorch</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com" target="_blank" class="project-link">📂 GitHub</a>
+                        <a href="#" class="project-link">🔗 Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image nlp">
+                    💬
+                    <span class="project-badge"><span class="badge-dot"></span> NLP</span>
+                </div>
+                <div class="project-content">
+                    <h3>Sentiment Analysis Engine</h3>
+                    <p>Transformer মডেল দিয়ে বাংলা টেক্সট সেন্টিমেন্ট এনালাইসিস</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>BERT</span>
+                        <span>Transformers</span>
+                        <span>HuggingFace</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com" target="_blank" class="project-link">📂 GitHub</a>
+                        <a href="#" class="project-link">🔗 Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image data">
+                    📈
+                    <span class="project-badge"><span class="badge-dot"></span> Data Science</span>
+                </div>
+                <div class="project-content">
+                    <h3>Stock Price Predictor</h3>
+                    <p>LSTM নেটওয়ার্ক দিয়ে স্টক মার্কেট প্রাইস প্রেডিকশন</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>LSTM</span>
+                        <span>Pandas</span>
+                        <span>Matplotlib</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com" target="_blank" class="project-link">📂 GitHub</a>
+                        <a href="#" class="project-link">🔗 Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="code-block">
+            <span class="comment"># My approach to solving ML problems</span><br>
+            <span class="keyword">import</span> <span class="variable">tensorflow</span> <span class="keyword">as</span> <span class="variable">tf</span><br>
+            <span class="keyword">from</span> <span class="variable">sklearn.model_selection</span> <span class="keyword">import</span> <span class="variable">train_test_split</span><br><br>
+            <span class="keyword">def</span> <span class="function">build_model</span>(<span class="variable">problem</span>):<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"""Transform complex problems into intelligent solutions"""</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">solution</span> = <span class="variable">AI</span>.<span class="function">analyze</span>(<span class="variable">problem</span>)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span> <span class="variable">solution</span>.<span class="function">deploy</span>()
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="section-header">
+            <h2>আমার <span>টেকনিক্যাল স্কিল</span></h2>
+            <p>AI/ML এবং Data Science এ আমার দক্ষতা এবং টুলস</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-card-icon">🐍</div>
+                    <h3>Python & Core</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>Python (Advanced)</li>
+                    <li>NumPy & Pandas</li>
+                    <li>Matplotlib & Seaborn</li>
+                    <li>Jupyter Notebooks</li>
+                    <li>Git & GitHub</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-card-icon">🤖</div>
+                    <h3>Machine Learning</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>Scikit-learn</li>
+                    <li>XGBoost & LightGBM</li>
+                    <li>Feature Engineering</li>
+                    <li>Model Optimization</li>
+                    <li>MLflow & Experiment Tracking</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-card-icon">🧠</div>
+                    <h3>Deep Learning</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>TensorFlow & Keras</li>
+                    <li>PyTorch</li>
+                    <li>CNN, RNN, LSTM</li>
+                    <li>Transformers & BERT</li>
+                    <li>GANs</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-card-icon">👁️</div>
+                    <h3>Computer Vision</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>OpenCV</li>
+                    <li>YOLO & Faster R-CNN</li>
+                    <li>Image Segmentation</li>
+                    <li>Face Recognition</li>
+                    <li>OCR Systems</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-card-icon">💬</div>
+                    <h3>NLP</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>NLTK & spaCy</li>
+                    <li>HuggingFace Transformers</li>
+                    <li>Text Classification</li>
+                    <li>Named Entity Recognition</li>
+                    <li>Chatbot Development</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-card-icon">☁️</div>
+                    <h3>MLOps & Deploy</h3>
+                </div>
+                <ul class="skill-list">
+                    <li>Docker & Kubernetes</li>
+                    <li>AWS SageMaker</li>
+                    <li>FastAPI & Flask</li>
+                    <li>Model Serving</li>
+                    <li>CI/CD for ML</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="section-header">
+            <h2>আমার <span>অভিজ্ঞতা</span></h2>
+            <p>AI/ML ফিল্ডে আমার কাজের অভিজ্ঞতা</p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Senior ML Engineer</h3>
+                    <div class="date">২০২৩ - বর্তমান</div>
+                    <p>Production-grade ML মডেল ডেভেলপ এবং ডিপ্লয়মেন্ট। Computer Vision এবং NLP প্রজেক্টে কাজ।</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>ML Developer</h3>
+                    <div class="date">২০২১ - ২০২৩</div>
+                    <p>Data pipeline তৈরি এবং ML মডেল ট্রেনিং। Scikit-learn এবং TensorFlow দিয়ে প্রজেক্ট।</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Data Science Intern</h3>
+                    <div class="date">২০২০ - ২০২১</div>
+                    <p>Data analysis এবং visualization। Python এবং SQL দিয়ে ডাটা প্রসেসিং।</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>আমার সাথে <span>যোগাযোগ</span> করুন</h2>
+                <p>AI/ML প্রজেক্ট, কনসাল্টিং, বা কোলাবরেশনের জন্য যোগাযোগ করুন। আমি সবসময় নতুন চ্যালেঞ্জ নিতে প্রস্তুত।</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <div>
+                            <strong>ইমেইল</strong>
+                            <p>aslam.hossain@email.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">💼</div>
+                        <div>
+                            <strong>LinkedIn</strong>
+                            <p>linkedin.com/in/aslamhossain</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">🐙</div>
+                        <div>
+                            <strong>GitHub</strong>
+                            <p>github.com/aslamhossain</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div>
+                            <strong>লোকেশন</strong>
+                            <p>ঢাকা, বাংলাদেশ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label>আপনার নাম</label>
+                        <input type="text" placeholder="নাম লিখুন" required>
+                    </div>
+                    <div class="form-group">
+                        <label>ইমেইল</label>
+                        <input type="email" placeholder="ইমেইল লিখুন" required>
+                    </div>
+                    <div class="form-group">
+                        <label>প্রজেক্ট টাইপ</label>
+                        <select required>
+                            <option value="">সিলেক্ট করুন</option>
+                            <option value="ml">Machine Learning</option>
+                            <option value="dl">Deep Learning</option>
+                            <option value="cv">Computer Vision</option>
+                            <option value="nlp">NLP</option>
+                            <option value="consulting">Consulting</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>বার্তা</label>
+                        <textarea rows="4" placeholder="আপনার প্রজেক্ট সম্পর্কে বলুন" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">🚀 বার্তা পাঠান</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon">🐍</div>
+                    Aslam Hossain
+                </div>
+                <p>AI/ML Developer | Python Expert | Building intelligent solutions for complex problems.</p>
+                <div class="social-links">
+                    <a href="https://github.com" target="_blank" class="social-link">🐙</a>
+                    <a href="https://linkedin.com" target="_blank" class="social-link">💼</a>
+                    <a href="https://twitter.com" target="_blank" class="social-link">𝕏</a>
+                    <a href="https://kaggle.com" target="_blank" class="social-link">📊</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>এক্সপার্টিজ</h4>
+                <ul>
+                    <li><a href="#skills">Machine Learning</a></li>
+                    <li><a href="#skills">Deep Learning</a></li>
+                    <li><a href="#skills">Computer Vision</a></li>
+                    <li><a href="#skills">NLP</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>প্রজেক্ট</h4>
+                <ul>
+                    <li><a href="#projects">Image Classifier</a></li>
+                    <li><a href="#projects">Object Detection</a></li>
+                    <li><a href="#projects">Sentiment Analysis</a></li>
+                    <li><a href="#projects">Stock Predictor</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>লিংক</h4>
+                <ul>
+                    <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://kaggle.com" target="_blank">Kaggle</a></li>
+                    <li><a href="#contact">যোগাযোগ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© ২০২৬ Aslam Hossain। সর্বস্বত্ব সংরক্ষিত। 🐍 Python দিয়ে তৈরি 💚</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🤝 হায়ার করুন</h2>
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+            <form onsubmit="handleHire(event)">
+                <div class="form-group">
+                    <label>কোম্পানির নাম</label>
+                    <input type="text" placeholder="কোম্পানির নাম" required>
+                </div>
+                <div class="form-group">
+                    <label>আপনার ইমেইল</label>
+                    <input type="email" placeholder="your@company.com" required>
+                </div>
+                <div class="form-group">
+                    <label>প্রজেক্ট বাজেট</label>
+                    <select required>
+                        <option value="">সিলেক্ট করুন</option>
+                        <option value="small">৳৫০,০০০ - ৳১,০০,০০০</option>
+                        <option value="medium">৳১,০০,০০০ - ৳৩,০০,০০০</option>
+                        <option value="large">৳৩,০০,০০০+</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>প্রজেক্ট ডিটেইলস</label>
+                    <textarea rows="3" placeholder="আপনার ML প্রজেক্ট সম্পর্কে বলুন" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">✨ রিকোয়েস্ট পাঠান</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
