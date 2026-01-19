@@ -634,6 +634,11 @@
             font-size: 4rem;
             overflow: hidden;
         }
+        .image-nn{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
 
         .project-image.nn {
             background: linear-gradient(135deg, #10B981, #3B82F6);
